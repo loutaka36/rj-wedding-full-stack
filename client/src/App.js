@@ -1,26 +1,58 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Redirect, Route, Switch } from 'react-router-dom';
+import Navbar from './Navbar';
+import Home from './Home';
+import Details from './Details';
+import Gallery from './Gallery';
+import RSVP from './RSVP';
+import MobileMenu from './MobileMenu';
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isMoblieMenuOpen: false
+    }
+    this.handleMobileMenuClick = this.handleMobileMenuClick.bind(this);
+  }
+
+  handleMobileMenuClick = () => {
+    this.setState((prevState) => {
+      return {
+        isMobileMenuOpen: !prevState.isMobileMenuOpen
+      }
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Navbar handleClick={this.handleMobileMenuClick}/>
+        <MobileMenu handleClick={this.handleMobileMenuClick} isOpen={this.state.isMobileMenuOpen}/>
+        <Switch>
+          <Route path="/details">
+            <Details />
+          </Route>
+          <Route path="/gallery">
+            <Gallery />
+          </Route>
+          <Route path="/rsvp">
+            <RSVP />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="*">
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+      </div>
+    );
+  }
 }
+
 
 export default App;

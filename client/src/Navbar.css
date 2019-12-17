@@ -1,0 +1,59 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: teal;
+}
+
+.navbar-rj {
+  padding: 20px 10px 20px 10px;
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0px;
+}
+
+.navbar-item {
+  padding: 20px 20px 20px 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* hamburger button  */
+.navbar-hamburger {
+  display: none;
+  padding-right: 10px;
+}
+
+.navbar-hamburger:hover {
+  cursor: pointer;
+}
+
+.navbar-hamburger_bar {
+  width: 35px;
+  height: 3px;
+  background-color: black;
+  border-radius: 10px;
+  margin: 6px 0;
+}
+
+/* responsiveness */
+@media screen and (max-width: 600px) {
+  .navbar-items {
+    display: none;
+  }
+
+  .navbar-hamburger{
+    display: block;
+  }
+
+  .navbar-rj {
+    padding: 10px;
+  }
+}
