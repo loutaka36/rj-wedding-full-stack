@@ -5,7 +5,7 @@ import accessReducer from './access';
 import mobileMenuReducer from './mobileMenu';
 
 const rootReducer = combineReducers({
-  access: accessReducer,
+  allowAccess: accessReducer,
   isMobileMenuOpen: mobileMenuReducer
 })
 
