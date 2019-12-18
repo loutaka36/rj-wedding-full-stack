@@ -33,6 +33,9 @@ class App extends React.Component {
         <Navbar handleClick={this.handleMobileMenuClick}/>
         <MobileMenu handleClick={this.handleMobileMenuClick} isOpen={this.state.isMobileMenuOpen}/>
         <Switch>
+          <Route exact path="/home">
+            <Home />
+          </Route>
           <Route path="/details">
             <Details />
           </Route>
@@ -42,11 +45,8 @@ class App extends React.Component {
           <Route path="/rsvp">
             <RSVP />
           </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
           <Route exact path="*">
-            <Redirect to="/" />
+            <Redirect to="/home" />
           </Route>
         </Switch>
       </div>

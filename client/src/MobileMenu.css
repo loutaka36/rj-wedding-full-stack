@@ -21,7 +21,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
   height: 66px;
+  position: absolute;
+
 }
 
 .mobileMenuX {
@@ -43,7 +46,7 @@
 .x1-open {
   transform: rotate(45deg) translate(6px, 0px);
   transition: all 0.3s ease-out;
-  transition-delay: 0.3s;
+  transition-delay: 0.4s;
 }
 
 .mobileMenuX-bar2 {
@@ -57,7 +60,7 @@
 .x2-open {
   transform: rotate(-45deg) translate(7px, 0px);
   transition: all 0.3s ease-out;
-  transition-delay: 0.3s;
+  transition-delay: 0.4s;
 }
 
 /* menu items */

@@ -35,7 +35,6 @@ const MobileMenu = (props) => {
         <div className="mobileMenu-item" onClick={props.handleClick}>
           <Link to="/rsvp">RSVP</Link>
         </div>
-        <div></div>
       </div>
     </div>
   );
