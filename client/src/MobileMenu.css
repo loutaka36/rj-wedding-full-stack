@@ -21,11 +21,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 38px;
+  height: 66px;
 }
 
 .mobileMenuX {
-  padding-right: 10px;
+  padding-right: 20px;
 }
 
 .mobileMenuX:hover{

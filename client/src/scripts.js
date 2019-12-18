@@ -3,7 +3,7 @@ export const serialize = (formData) => {
   return keys.map(key => `${key}=${formData[key]}`).join('&');
 }
 
-export const MD5 = function (string) {
+export const encode = function (string) {
 
   function RotateLeft(lValue, iShiftBits) {
           return (lValue<<iShiftBits) | (lValue>>>(32-iShiftBits));

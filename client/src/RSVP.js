@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './RSVP.css';
-import { serialize, MD5 } from './scripts';
+import { serialize, encode } from './scripts';
 import { Link } from 'react-router-dom';
 
 class RSVP extends React.Component {
@@ -30,7 +30,7 @@ class RSVP extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (MD5(this.state.inviteCode) === '993715cafa4258018357cd2fe4ba1f94') {
+    if (encode(this.state.inviteCode) === '993715cafa4258018357cd2fe4ba1f94') {
       const encodedData = serialize({
         firstName: this.state.firstName,
         lastName: this.state.lastName,
