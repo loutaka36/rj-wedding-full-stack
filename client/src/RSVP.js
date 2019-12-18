@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './RSVP.css';
-import { serialize, encode } from './scripts';
+import { serialize } from './scripts';
 import { Link } from 'react-router-dom';
 
 class RSVP extends React.Component {
@@ -28,25 +28,25 @@ class RSVP extends React.Component {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    if (encode(this.state.inviteCode) === '993715cafa4258018357cd2fe4ba1f94') {
-      const encodedData = serialize({
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        additionalGuests: this.state.additionalGuests
-      });
-      this.sendFormData(encodedData);
-      //immediately disables submit button to prevent multiple submissions. this runs before the async sendFormData function
-      this.setState({
-        isSendingFormData: true,
-      })
-    } else {
-      this.setState({
-        error: 'invalidInviteCode'
-      })
-    }
-  }
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   if (encode(this.state.inviteCode) === '993715cafa4258018357cd2fe4ba1f94') {
+  //     const encodedData = serialize({
+  //       firstName: this.state.firstName,
+  //       lastName: this.state.lastName,
+  //       additionalGuests: this.state.additionalGuests
+  //     });
+  //     this.sendFormData(encodedData);
+  //     //immediately disables submit button to prevent multiple submissions. this runs before the async sendFormData function
+  //     this.setState({
+  //       isSendingFormData: true,
+  //     })
+  //   } else {
+  //     this.setState({
+  //       error: 'invalidInviteCode'
+  //     })
+  //   }
+  // }
 
   //async function to send form data to google docs
   async sendFormData(encodedData) {

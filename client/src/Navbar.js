@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
 import './Navbar.css'
+import { toggleMobileMenu } from './store/mobileMenu';
 
 const Navbar = (props) => {
   return (
@@ -22,7 +24,7 @@ const Navbar = (props) => {
           <Link to="/rsvp">RSVP</Link>
         </div>
       </div>
-      <div className="navbar-hamburger" onClick={props.handleClick}>
+      <div className="navbar-hamburger" onClick={props.toggleMobileMenu}>
         <div className="navbar-hamburger_bar"></div>
         <div className="navbar-hamburger_bar"></div>
       </div>
@@ -30,4 +32,8 @@ const Navbar = (props) => {
   );
 }
 
-export default Navbar;
+const mapDispatchToProps = (dispatch) => ({
+  toggleMobileMenu: () => dispatch(toggleMobileMenu())
+})
+
+export default withRouter(connect(null, mapDispatchToProps)(Navbar));

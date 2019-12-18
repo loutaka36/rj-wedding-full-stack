@@ -13,25 +13,13 @@ import MobileMenu from './MobileMenu';
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      isMoblieMenuOpen: false
-    }
-    this.handleMobileMenuClick = this.handleMobileMenuClick.bind(this);
   }
-
-  handleMobileMenuClick = () => {
-    this.setState((prevState) => {
-      return {
-        isMobileMenuOpen: !prevState.isMobileMenuOpen
-      }
-    });
-  };
 
   render() {
     return (
       <div className="App">
-        <Navbar handleClick={this.handleMobileMenuClick}/>
-        <MobileMenu handleClick={this.handleMobileMenuClick} isOpen={this.state.isMobileMenuOpen}/>
+        <Navbar />
+        <MobileMenu />
         <Switch>
           <Route exact path="/home">
             <Home />
