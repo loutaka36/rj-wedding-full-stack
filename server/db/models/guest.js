@@ -2,7 +2,11 @@ const Sequelize = require('sequelize');
 const db = require('../db');
 
 module.exports = db.define('guest', {
-  name: {
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  lastName: {
     type: Sequelize.STRING,
     allowNull: false,
   },

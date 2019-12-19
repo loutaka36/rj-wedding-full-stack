@@ -1,4 +1,4 @@
-.rsvp {
+/* .rsvp {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ max-width: 400px;
 }
 
 /* first and last name input styling */
-.name-fields {
+/* .name-fields {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -67,4 +67,4 @@ max-width: 400px;
   color: red;
 }
 
-
+ */

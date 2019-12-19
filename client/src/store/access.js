@@ -4,7 +4,6 @@ import {toggleAccessSubmitBtn} from './accessSubmitBtn';
 const ACCESS_GRANTED = 'ACCESS_GRANTED';
 const ACCESS_DENIED = 'ACCESS_DENIED';
 
-//REMEMBER COMPONENT WILL UNMOUNT
 const grantAccess = () => ({
   type: ACCESS_GRANTED
 })

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const {encode} = require('../../scripts');
 
+//routes for /auth
+
 const createAuthError = () => {
   const err = new Error('Incorrect invite code');
   err.status = 401;

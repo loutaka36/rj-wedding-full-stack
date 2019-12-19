@@ -24,16 +24,16 @@ class App extends React.Component {
           <Navbar />
           <MobileMenu />
           <Switch>
-            <Route path="/home">
+            <Route exact path="/home">
               <Home />
             </Route>
-            <Route path="/details">
+            <Route exact path="/details">
               <Details />
             </Route>
-            <Route path="/gallery">
+            <Route exact path="/gallery">
               <Gallery />
             </Route>
-            <Route path="/rsvp">
+            <Route exact path="/rsvp">
               <RSVP />
             </Route>
             <Route exact path="*">

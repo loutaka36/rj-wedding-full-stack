@@ -7,7 +7,7 @@ const seed = async () => {
     await Guest.bulkCreate(guestList);
     console.log('success!')
   } catch (err) {
-   console.log(red(err))
+   console.log(err)
   }
 }
 
