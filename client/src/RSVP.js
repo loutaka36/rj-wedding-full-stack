@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import './RSVP.css';
-import { serialize } from './scripts';
 import { Link } from 'react-router-dom';
 
 class RSVP extends React.Component {
@@ -10,11 +9,6 @@ class RSVP extends React.Component {
     this.state = {
       firstName: '',
       lastName: '',
-      additionalGuests: 0,
-      inviteCode: '',
-      error: '',
-      submission: {},
-      isSendingFormData: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,44 +43,36 @@ class RSVP extends React.Component {
   // }
 
   //async function to send form data to google docs
-  async sendFormData(encodedData) {
-    try {
-      const {data} = await axios.post('https://script.google.com/macros/s/AKfycbz7gVTXRDkYvrK-ACXlSLb561vU5qQSnrxoq_pOH233kxrjo9qK/exec', encodedData, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      })
-      this.setState({
-        firstName: '',
-        lastName: '',
-        additionalGuests: 0,
-        inviteCode: '',
-        error: '',
-        submission: data,
-        isSendingFormData: false
-      })
-    } catch (err) {
-      this.setState({
-        error: 'networkError',
-        isSendingFormData: false
-      })
-    }
-  }
+  // async sendFormData(encodedData) {
+  //   try {
+  //     const {data} = await axios.post('https://script.google.com/macros/s/AKfycbz7gVTXRDkYvrK-ACXlSLb561vU5qQSnrxoq_pOH233kxrjo9qK/exec', encodedData, {
+  //       headers: {
+  //         'Content-Type': 'application/x-www-form-urlencoded'
+  //       }
+  //     })
+  //     this.setState({
+  //       firstName: '',
+  //       lastName: '',
+  //       additionalGuests: 0,
+  //       inviteCode: '',
+  //       error: '',
+  //       submission: data,
+  //       isSendingFormData: false
+  //     })
+  //   } catch (err) {
+  //     this.setState({
+  //       error: 'networkError',
+  //       isSendingFormData: false
+  //     })
+  //   }
+  // }
 
   render() {
-    //display helpful message when user enters incorrect access code or if there is a network error
-    let error = ''
-    if (this.state.error === 'invalidInviteCode') {
-      error = <div className="RSVPErrorMessage">Oops! Looks like you typed an incorrect invite code. Please check your input or contact the Bride & Groom.</div>;
-    }
-    if (this.state.error === 'networkError') {
-      error = <div className="RSVPErrorMessage">There was a problem with the network. Please try again.</div>;
-    }
 
     //disable submit button if any of the required fields are empty or if the user has clicked the submit button
-    const isSubmitDisabled = !this.state.firstName || !this.state.lastName || !this.state.inviteCode || this.state.isSendingFormData;
-    //change cursor to wait when form data is being sent to google docs
-    const cursor = this.state.isSendingFormData ? {cursor: "wait"} : {cursor: "default"};
+    // const isSubmitDisabled = !this.state.firstName || !this.state.lastName || !this.state.inviteCode || this.state.isSendingFormData;
+    // //change cursor to wait when form data is being sent to google docs
+    // const cursor = this.state.isSendingFormData ? {cursor: "wait"} : {cursor: "default"};
 
     return (
       !this.state.submission.result ?
@@ -117,28 +103,6 @@ class RSVP extends React.Component {
                 <label htmlFor="lastName">Last Name</label>
               </div>
             </div>
-          </div>
-          <div className="rsvp-list_item">
-            <label className="title" htmlFor="additionalGuests">Additional Guests* </label>
-            <input
-              name="additionalGuests"
-              type="number"
-              min="0"
-              max="4"
-              value={this.state.additionalGuests}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="rsvp-list_item">
-            <label className="title" htmlFor="inviteCode">Invite Code* </label>
-            <input
-              name="inviteCode"
-              type="text"
-              placeholder="Invite Code"
-              value={this.state.inviteCode}
-              onChange={this.handleChange}
-            />
-
           </div>
           <div className="submit-btn_container">
             <input className="submit-btn" type="submit" value="I'll be there!" disabled={isSubmitDisabled}/>

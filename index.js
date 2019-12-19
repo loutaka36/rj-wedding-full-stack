@@ -3,7 +3,7 @@ const app = require('./server');
 const PORT = process.env.PORT || 5000;
 
 const init = async () => {
-  await db.sync();
+  await db.sync({force: true});
   app.listen(PORT, () => console.log(`listening on ${PORT}...`));
 }
 

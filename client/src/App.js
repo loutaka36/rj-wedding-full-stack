@@ -18,13 +18,13 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.props.allowAcces) {
+    if (this.props.access.allow) {
       return (
         <div className="App">
           <Navbar />
           <MobileMenu />
           <Switch>
-            <Route exact path="/home">
+            <Route path="/home">
               <Home />
             </Route>
             <Route path="/details">
@@ -58,7 +58,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  allowAccess: state.allowAccess
+  access: state.access
 });
 
 export default withRouter(connect(mapStateToProps)(App));

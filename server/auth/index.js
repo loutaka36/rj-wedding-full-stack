@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {encode} = require('./scripts');
+const {encode} = require('../../scripts');
 
 const createAuthError = () => {
   const err = new Error('Incorrect invite code');
@@ -15,7 +15,7 @@ const createAuthError = () => {
 
 router.put('/access', (req, res, next) => {
   if (encode(req.body.inviteCode) === '993715cafa4258018357cd2fe4ba1f94') {
-    res.json({access: true})
+    res.sendStatus(200);
   } else {
     next(createAuthError());
   }

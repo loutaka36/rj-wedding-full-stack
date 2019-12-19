@@ -3,10 +3,12 @@ import thunkMiddleware from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import accessReducer from './access';
 import mobileMenuReducer from './mobileMenu';
+import accessSubmitBtnReducer from './accessSubmitBtn';
 
 const rootReducer = combineReducers({
-  allowAccess: accessReducer,
-  isMobileMenuOpen: mobileMenuReducer
+  access: accessReducer,
+  isMobileMenuOpen: mobileMenuReducer,
+  isAccessSubmitDisabled: accessSubmitBtnReducer
 })
 
 const middleware = composeWithDevTools(

@@ -1,32 +1,26 @@
 const guestList = [
   {
-    firstName: 'Joyce',
-    lastName: 'Chung',
+    name: 'Joyce Chung',
     groupId: 1
   },
   {
-    firstName: 'Lydia',
-    lastName: 'Chung',
+    name: 'Lydia Chung',
     groupId: 1
   },
   {
-    firstName: 'Katherine',
-    lastName: 'Chung',
+    name: 'Katherine Chung',
     groupId: 1
   },
   {
-    firstName: 'Lou',
-    lastName: 'Takahashi',
+    name: 'Lou Takahashi',
     groupId: 2
   },
   {
-    firstName: 'Koharu',
-    lastName: 'Takahashi',
+    name: 'Koharu Takahashi',
     groupId: 2
   },
   {
-    firstName: 'Gus',
-    lastName: 'Johnson',
+    name: 'Gus Johnson',
     groupId: 3
   }
 ];
