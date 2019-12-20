@@ -11,8 +11,8 @@ module.exports = db.define('guest', {
     allowNull: false,
   },
   isAttending: {
-    type: Sequelize.BOOLEAN,
-    defaultValue: false
+    type: Sequelize.ENUM('accept', 'decline', 'pending'),
+    defaultValue: 'pending'
   },
   groupId: {
     type: Sequelize.INTEGER,

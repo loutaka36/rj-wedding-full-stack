@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchGroup } from './store/group';
 import { postSubmission } from './store/rsvpSubmission';
+import { toggleRSVPSubmitBtn } from './store/rsvpSubmitBtn';
 
 class RSVPSelect extends React.Component {
   constructor() {
@@ -47,6 +48,7 @@ class RSVPSelect extends React.Component {
 
   async handleSubmit(event)  {
     event.preventDefault();
+    this.props.toggleRSVPSubmitBtn();
     await this.props.postSubmission(this.state.going, this.state.notGoing);
   }
 
@@ -59,7 +61,7 @@ class RSVPSelect extends React.Component {
     if (this.props.rsvpSubmission.error) {
       errorMessage = <div>{this.props.rsvpSubmission.error}</div>
     }
-    console.log(this.state);
+
     return (
       <div className="rsvp-select">
         <div>{`Hi, ${this.props.guest.guestData.firstName}`}</div>
@@ -78,7 +80,7 @@ class RSVPSelect extends React.Component {
             )
           }
            <div className="submit-btn_container">
-            <input className="submit-btn" type="submit" disabled={this.state.going.length === 0 && this.state.notGoing.length === 0 } />
+            <input className="submit-btn" type="submit" disabled={(this.state.going.length === 0 && this.state.notGoing.length === 0) || this.props.isRSVPSubmitBtnDisabled} />
           </div>
         </form>
         {errorMessage}
@@ -90,12 +92,14 @@ class RSVPSelect extends React.Component {
 const mapStateToProps = (state) => ({
   guest: state.guest,
   group: state.group,
-  rsvpSubmission: state.rsvpSubmission
+  rsvpSubmission: state.rsvpSubmission,
+  isRSVPSubmitBtnDisabled: state.isRSVPSubmitBtnDisabled
 });
 
 const mapDispatchToProps = (dispatch) => ({
   fetchGroup: (groupId) => dispatch(fetchGroup(groupId)),
-  postSubmission: (accept, decline) => dispatch(postSubmission(accept, decline))
+  postSubmission: (accept, decline) => dispatch(postSubmission(accept, decline)),
+  toggleRSVPSubmitBtn: () => dispatch(toggleRSVPSubmitBtn())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RSVPSelect);

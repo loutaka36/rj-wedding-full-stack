@@ -6,8 +6,9 @@ import mobileMenuReducer from './mobileMenu';
 import accessSubmitBtnReducer from './accessSubmitBtn';
 import singleGuestReducer from './singleGuest';
 import groupReducer from './group';
-import singleGuestSubmitReducer from './singleGuestSubmitBtn';
+import singleGuestSubmitBtnReducer from './singleGuestSubmitBtn';
 import rsvpSubmissionReducer from './rsvpSubmission';
+import rsvpSubmitBtnReducer from './rsvpSubmitBtn';
 
 const rootReducer = combineReducers({
   access: accessReducer,
@@ -15,8 +16,9 @@ const rootReducer = combineReducers({
   isAccessSubmitDisabled: accessSubmitBtnReducer,
   guest: singleGuestReducer,
   group: groupReducer,
-  isSingleGuestSubmitDisabled: singleGuestSubmitReducer,
-  rsvpSubmission: rsvpSubmissionReducer
+  isSingleGuestSubmitDisabled: singleGuestSubmitBtnReducer,
+  rsvpSubmission: rsvpSubmissionReducer,
+  isRSVPSubmitBtnDisabled: rsvpSubmitBtnReducer
 })
 
 const middleware = composeWithDevTools(

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toggleRSVPSubmitBtn } from './rsvpSubmitBtn';
 
 const SET_SUCCESS = 'SET_SUCCESS';
 const SET_SUBMISSION_ERROR = 'SET_SUBMISSION_ERROR';
@@ -25,12 +26,14 @@ export const postSubmission = (accept, decline) => {
         accept,
         decline
       })
-      console.log(data)
+      dispatch(toggleRSVPSubmitBtn())
       dispatch(setSuccess(data));
     } catch (err) {
       if (err.response) {
+        dispatch(toggleRSVPSubmitBtn())
         dispatch(setSubmissionError(err.response.data));
       } else {
+        dispatch(toggleRSVPSubmitBtn())
         dispatch(setSubmissionError('Network Error'));
       }
     }
