@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleGuest } from './store/singleGuest';
+import { toggleSingleGuestSubmitBtn } from './store/singleGuestSubmitBtn';
 
 class RSVPFind extends React.Component {
   constructor() {
@@ -22,6 +23,7 @@ class RSVPFind extends React.Component {
 
   async handleSubmit(event)  {
     event.preventDefault();
+    this.props.toggleSingleGuestSubmitBtn()
     await this.props.fetchSingleGuest(this.state.firstName, this.state.lastName);
   }
 
@@ -60,7 +62,7 @@ class RSVPFind extends React.Component {
             </div>
           </div>
           <div className="submit-btn_container">
-            <input className="submit-btn" type="submit" value="Find me!" disabled={false}/>
+            <input className="submit-btn" type="submit" value={this.props.isSingleGuestSubmitDisabled ? "Finding..." : "Find me!"} disabled={this.props.isSingleGuestSubmitDisabled}/>
           </div>
         </form>
         {errorMessage}
@@ -70,11 +72,13 @@ class RSVPFind extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  guest: state.guest
+  guest: state.guest,
+  isSingleGuestSubmitDisabled: state.isSingleGuestSubmitDisabled
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchSingleGuest: (firstName, lastName) => dispatch(fetchSingleGuest(firstName, lastName))
+  fetchSingleGuest: (firstName, lastName) => dispatch(fetchSingleGuest(firstName, lastName)),
+  toggleSingleGuestSubmitBtn: () => dispatch(toggleSingleGuestSubmitBtn())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RSVPFind);
