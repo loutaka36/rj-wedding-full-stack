@@ -19,15 +19,33 @@ class RSVP extends React.Component {
   render() {
     if (this.props.guest.guestData.groupId && (this.props.rsvpSubmission.submission.accepted|| this.props.rsvpSubmission.submission.declined)) {
       return (
-        <RSVPComplete />
+        <div className="rsvp">
+          <div className="rsvp-top">
+            <div className="rsvp-top_title">RSVP</div>
+            <div className="rsvp-top_text">Thanks for submitting! Here is a confirmation of your submission: </div>
+          </div>
+          <RSVPComplete />
+        </div>
       );
     } else if (this.props.guest.guestData.groupId) {
       return (
-        <RSVPSelect />
+        <div className="rsvp">
+          <div className="rsvp-top">
+            <div className="rsvp-top_title">RSVP</div>
+            <div className="rsvp-top_text">{`Hi,${this.props.guest.guestData.firstName}! Pleaes select who will be coming.`}}</div>
+          </div>
+          <RSVPSelect />
+        </div>
       );
     } else {
       return (
-        <RSVPFind />
+        <div className="rsvp">
+          <div className="rsvp-top">
+            <div className="rsvp-top_title">RSVP</div>
+            <div className="rsvp-top_text">Let's find your name on the guest list!</div>
+          </div>
+          <RSVPFind />
+        </div>
       );
     }
   }

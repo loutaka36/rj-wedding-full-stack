@@ -28,7 +28,27 @@ const guestList = [
     firstName: 'Gus',
     lastName: 'Johnson',
     groupId: 3
-  }
+  },
+  {
+    firstName: 'Andrew',
+    lastName: 'Hamm',
+    groupId: 4
+  },
+  {
+    firstName: 'Joe',
+    lastName: 'Mama',
+    groupId: 4
+  },
+  {
+    firstName: 'Galen',
+    lastName: 'Caldwell',
+    groupId: 5
+  },
+  {
+    firstName: 'Yo',
+    lastName: 'Mama',
+    groupId: 5
+  },
 ];
 
 module.exports = guestList

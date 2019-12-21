@@ -8,7 +8,7 @@ const Navbar = (props) => {
   return (
     <nav className="navbar">
       <div className="navbar-rj">
-        <Link to="/">R&J</Link>
+        <Link to="/">Ryunoshin & Joyce</Link>
       </div>
       <div className="navbar-items">
         <div className="navbar-item" >

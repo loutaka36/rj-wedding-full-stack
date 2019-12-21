@@ -81,7 +81,6 @@ class RSVPSelect extends React.Component {
     }
     return (
       <div className="rsvp-select">
-        <div>{`Hi, ${this.props.guest.guestData.firstName}! Please submit the form below.`}</div>
         <form onSubmit={this.handleSubmit}>
           {this.props.group.groupMembers.length === 0 ?
             <div className="loader"></div> :

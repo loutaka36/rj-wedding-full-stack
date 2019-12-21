@@ -1,0 +1,35 @@
+.access-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.access-page form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.access-page_item {
+  margin: 20px;
+}
+
+/* invite code input */
+.access-page_invite-code::placeholder {
+  text-align: center;
+}
+
+.access-page_invite-code {
+
+}
+
+/* access error message */
+.access-error {
+  color: red;
+  width: 70%;
+}

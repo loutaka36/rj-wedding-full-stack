@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  position: absolute;
+  font-family: brandon-grot-w01-light, sans-serif;
+  font-size: 1.5rem;
 }
 
 .navbar-rj {
@@ -21,7 +25,7 @@
 
 .navbar a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 /* hamburger button  */
@@ -37,13 +41,17 @@
 .navbar-hamburger_bar {
   width: 35px;
   height: 3px;
-  background-color: black;
+  background-color: #fff;
   border-radius: 10px;
   margin: 6px 0;
 }
 
 /* responsiveness */
 @media screen and (max-width: 600px) {
+  .navbar {
+    font-size: 1rem;
+  }
+
   .navbar-items {
     display: none;
   }
