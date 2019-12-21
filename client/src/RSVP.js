@@ -6,17 +6,18 @@ import RSVPSelect from './RSVPSelect';
 import RSVPComplete from './RSVPComplete';
 import { resetSingleGuest } from './store/singleGuest';
 import { resetSubmission } from './store/rsvpSubmission';
-
+import { resetGroup } from './store/group';
 
 class RSVP extends React.Component {
 
   componentWillUnmount() {
     this.props.resetSingleGuest();
     this.props.resetSubmission();
+    this.props.resetGroup();
   }
 
   render() {
-    if (this.props.guest.guestData.groupId && this.props.rsvpSubmission.submission.accept || this.props.rsvpSubmission.submission.decline) {
+    if (this.props.guest.guestData.groupId && (this.props.rsvpSubmission.submission.accepted|| this.props.rsvpSubmission.submission.declined)) {
       return (
         <RSVPComplete />
       );
@@ -39,7 +40,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   resetSingleGuest: () => dispatch(resetSingleGuest()),
-  resetSubmission: () => dispatch(resetSubmission())
+  resetSubmission: () => dispatch(resetSubmission()),
+  resetGroup: () => dispatch(resetGroup())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RSVP);

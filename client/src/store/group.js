@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const SET_GROUP = 'SET_GROUP';
 const SET_GROUP_ERROR = 'SET_GROUP_ERROR';
+const RESET_GROUP = 'RESET_GROUP';
 
 const setGroup = (group) => ({
   type: SET_GROUP,
@@ -11,6 +12,10 @@ const setGroup = (group) => ({
 const setGroupError = (error) => ({
   type: SET_GROUP_ERROR,
   error
+})
+
+export const resetGroup = () => ({
+  type: RESET_GROUP
 })
 
 export const fetchGroup = (groupId) => {
@@ -39,6 +44,11 @@ const reducer = (group = {groupMembers: [], error: ''}, action) => {
       return {
         groupMembers: action.group,
         error: action.error
+      }
+    case RESET_GROUP:
+      return {
+        groupMembers: [],
+        error: ''
       }
     default:
       return group;

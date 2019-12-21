@@ -10,7 +10,7 @@ const setSuccess = (submission) => ({
   submission
 });
 
-const setSubmissionError = (error) => ({
+export const setSubmissionError = (error) => ({
   type: SET_SUBMISSION_ERROR,
   error
 });
@@ -19,13 +19,10 @@ export const resetSubmission = () => ({
   type: RESET_SUBMISSION
 })
 
-export const postSubmission = (accept, decline) => {
+export const postSubmission = (submissions) => {
   return async (dispatch) => {
     try {
-      const {data} = await axios.put('/api/guest/rsvp', {
-        accept,
-        decline
-      })
+      const {data} = await axios.put('/api/guest/rsvp', {submissions});
       dispatch(toggleRSVPSubmitBtn())
       dispatch(setSuccess(data));
     } catch (err) {

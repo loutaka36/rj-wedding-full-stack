@@ -10,9 +10,17 @@ module.exports = db.define('guest', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  isAttending: {
+  attendence: {
     type: Sequelize.ENUM('accept', 'decline', 'pending'),
     defaultValue: 'pending'
+  },
+  entree: {
+    type: Sequelize.ENUM('steak', 'salmon', 'vegetarian'),
+    defaultValue: null
+  },
+  restrictions: {
+    type: Sequelize.TEXT,
+    defaultValue: null
   },
   groupId: {
     type: Sequelize.INTEGER,

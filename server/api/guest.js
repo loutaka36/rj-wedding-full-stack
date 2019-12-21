@@ -44,43 +44,53 @@ router.get('/group/:groupId', async (req, res, next) => {
 });
 
 router.put('/rsvp', async (req, res, next) => {
-  const accept = req.body.accept.map(id => Number(id));
-  const decline = req.body.decline.map(id => Number(id));
-  let accepted = null;
-  let declined = null;
+  let submissions = req.body.submissions;
+  let accept = [];
+  let decline = [];
+  let accepted = [];
+  let declined = [];
+  let ids = Object.keys(submissions)
+
   try {
-    if (accept.length > 0) {
-      accepted = await Guest.update({
-        isAttending: 'accept'
-      }, {
-        where: {
-          id: {
-            [Op.in]: accept
-          }
-        },
-        returning: true,
-        plain: true
-      })
-      accepted = accepted[1];
+    for (let id of ids) {
+      if (submissions[id].attendence === 'accept') {
+        submissions[id].id = Number(id);
+        accept.push(submissions[id]);
+      } else {
+        submissions[id].id = Number(id)
+        decline.push(submissions[id])
+      }
     }
 
-    if (decline.length > 0) {
-      declined = await Guest.update({
-        isAttending: 'decline'
-      }, {
+    for (let guest of accept) {
+      const resArr = await Guest.update({
+        attendence: 'accept',
+        entree: guest.entree,
+        restrictions: guest.restrictions
+      },
+      {
         where: {
-          id: {
-            [Op.in]: decline
-          }
-        },
-        returning: true,
-        plain: true
+          id: guest.id
+        }
       })
-      declined = declined[1]
+      accepted.push(resArr[1])
     }
+
+    for (let guest of decline) {
+      const resArr = await Guest.update({
+        attendence: 'decline',
+      },
+      {
+        where: {
+          id: guest.id
+        }
+      })
+      declined.push(resArr[1])
+    }
+
     res.json({
-      accept: accepted,
-      decline: declined
+      accepted,
+      declined
     })
   } catch (err) {
     next(err);
