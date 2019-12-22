@@ -26,7 +26,7 @@
   font-weight: bold;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 878px) {
   .details-top {
     height: 560px;
   }

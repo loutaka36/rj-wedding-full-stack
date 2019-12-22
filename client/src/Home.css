@@ -29,10 +29,10 @@
   position: relative;
   top: 63%;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 878px) {
   .home-top {
     height: 560px;
   }
@@ -43,6 +43,5 @@
 
   .home-top_details {
     color: #fff;
-    font-size: 1rem;
   }
 }

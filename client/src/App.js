@@ -8,6 +8,7 @@ import AccessPage from './AccessPage';
 import Navbar from './Navbar';
 import Home from './Home';
 import Details from './Details';
+import Accommodations from './Accommodations';
 import Gallery from './Gallery';
 import RSVP from './RSVP';
 import MobileMenu from './MobileMenu';
@@ -29,6 +30,9 @@ class App extends React.Component {
             </Route>
             <Route exact path="/details">
               <Details />
+            </Route>
+            <Route exact path="/accommodations">
+              <Accommodations />
             </Route>
             <Route exact path="/gallery">
               <Gallery />

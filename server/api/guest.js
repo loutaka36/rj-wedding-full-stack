@@ -71,7 +71,9 @@ router.put('/rsvp', async (req, res, next) => {
       {
         where: {
           id: guest.id
-        }
+        },
+        returning: true,
+        plain: true
       })
       accepted.push(resArr[1])
     }
@@ -83,7 +85,9 @@ router.put('/rsvp', async (req, res, next) => {
       {
         where: {
           id: guest.id
-        }
+        },
+        returning: true,
+        plain: true
       })
       declined.push(resArr[1])
     }

@@ -31,6 +31,10 @@ const MobileMenu = (props) => {
         </div>
         <hr/>
         <div className="mobileMenu-item" onClick={props.toggleMobileMenu}>
+          <Link to="/accommodations">Accommodations</Link>
+        </div>
+        <hr/>
+        <div className="mobileMenu-item" onClick={props.toggleMobileMenu}>
           <Link to="/gallery">Gallery</Link>
         </div>
         <hr/>

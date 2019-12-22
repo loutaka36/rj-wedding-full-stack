@@ -84,7 +84,7 @@
 }
 
 /* remove menu if navbar returns */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 878px) {
   .mobile-menu {
     display: none;
   }
