@@ -7,7 +7,7 @@
   left: -100%;
   transform: translateX(-100%);
   transition: all 0.3s ease-in;
-  z-index: 99;
+  z-index: 98;
 }
 
 .open {
@@ -22,10 +22,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 100%;
+  width: 20%;
   height: 66px;
   position: absolute;
-
+  top: 0px;
+  right: 0px;
 }
 
 .mobileMenuX {
@@ -81,6 +82,10 @@
 .mobileMenu-items a {
   text-decoration: none;
   color: #000;
+}
+
+.mobile-menu-item {
+  z-index: 99;
 }
 
 /* remove menu if navbar returns */

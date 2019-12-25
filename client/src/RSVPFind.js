@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { fetchSingleGuest } from './store/singleGuest';
 import { toggleSingleGuestSubmitBtn } from './store/singleGuestSubmitBtn';
 
+import './RSVPFind.css';
+
 class RSVPFind extends React.Component {
   constructor() {
     super();
@@ -37,7 +39,7 @@ class RSVPFind extends React.Component {
       <div className="rsvp-find">
         <form onSubmit={this.handleSubmit}>
           <div className="rsvp-list_item">
-            <div className="title">Name</div>
+            <div className="title">Please Enter Your Name:</div>
             <div className="name-fields">
               <div className="name-field">
                 <input
@@ -47,7 +49,6 @@ class RSVPFind extends React.Component {
                   value={this.state.firstName}
                   onChange={this.handleChange}
                 />
-                <label htmlFor="firstName">First Name</label>
               </div>
               <div className="name-field">
                 <input
@@ -57,7 +58,6 @@ class RSVPFind extends React.Component {
                   value={this.state.lastName}
                   onChange={this.handleChange}
                 />
-                <label htmlFor="lastName">Last Name</label>
               </div>
             </div>
           </div>

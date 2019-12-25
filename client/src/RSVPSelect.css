@@ -1,3 +1,4 @@
+/* styling for loading icon */
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #3498db; /* Blue */
@@ -10,4 +11,57 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.rsvp-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%
+}
+
+.rsvp-select form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-member {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.group-member textarea {
+  width: 353px;
+}
+
+.group-member select option {
+  text-align: center;
+}
+
+.rsvp-select-form-field {
+  margin: 10px;
+}
+
+.rsvp-select-form-field::placeholder {
+  text-align: center;
+}
+
+.rsvp-select .submit-btn_container {
+  margin: 10px;
+  padding: 10px;
+}
+
+/* error message styling */
+.rsvp-select-error-message {
+  color: red;
+  width: 80%;
+  text-align: center;
 }

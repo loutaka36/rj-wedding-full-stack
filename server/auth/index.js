@@ -16,7 +16,7 @@ const createAuthError = () => {
 // });
 
 router.put('/access', (req, res, next) => {
-  if (encode(req.body.inviteCode) === '993715cafa4258018357cd2fe4ba1f94') {
+  if (encode(req.body.inviteCode) === process.env.INVITE_CODE) {
     res.sendStatus(200);
   } else {
     next(createAuthError());

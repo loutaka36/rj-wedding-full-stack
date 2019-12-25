@@ -12,6 +12,7 @@ import Accommodations from './Accommodations';
 import Gallery from './Gallery';
 import RSVP from './RSVP';
 import MobileMenu from './MobileMenu';
+import Footer from './Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -44,6 +45,7 @@ class App extends React.Component {
               <Redirect to="/home" />
             </Route>
           </Switch>
+          <Footer />
         </div>
       );
     } else {

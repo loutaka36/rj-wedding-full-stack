@@ -77,37 +77,35 @@ class RSVPSelect extends React.Component {
   render() {
     let errorMessage;
     if (this.props.rsvpSubmission.error) {
-      errorMessage = <div>{this.props.rsvpSubmission.error}</div>
+      errorMessage = <div className="rsvp-select-error-message">{this.props.rsvpSubmission.error}</div>
     }
     return (
       <div className="rsvp-select">
-        <form onSubmit={this.handleSubmit}>
-          {this.props.group.groupMembers.length === 0 ?
+        {this.props.group.groupMembers.length === 0 ?
             <div className="loader"></div> :
-            this.props.group.groupMembers.map(member =>
+            <form onSubmit={this.handleSubmit}>
+            {this.props.group.groupMembers.map(member =>
               <div onChange={this.handleChange} key={member.id} guestId={member.id} className="group-member">
-                <label for="attendence">{`${member.firstName} ${member.lastName}`}</label>
-                <select name="attendence">
+                <label className="rsvp-select-form-field" for="attendence">{`${member.firstName} ${member.lastName}`}</label>
+                <select className="rsvp-select-form-field" name="attendence">
                   <option value="pending">--Will this individual be attending?--</option>
                   <option value="accept">Accept</option>
                   <option value="decline">Decline</option>
                 </select>
-                <label for="entree">Entree</label>
-                <select disabled={areExtraFieldsDisabled(this.state, member.id)} name="entree">
+                <select className="rsvp-select-form-field" disabled={areExtraFieldsDisabled(this.state, member.id)} name="entree">
                   <option value="">--Choose your entree--</option>
                   <option value="steak">Manhattan strip steak with garlic jus, asparagus, roasted garlic mash</option>
                   <option value="salmon">Atlantic salmon, whipped potato, spinach, lemon dill</option>
                   <option value="vegetarian">Grilled eggplant cannelloni, preserved tomato, wilted spinach</option>
                 </select>
-                <label for="restrictions">Any dietary restrictions or food allergies?</label>
-                <textarea disabled={areExtraFieldsDisabled(this.state, member.id)} name="restrictions" placeholder="Any dietary restrictions or allergies?"></textarea>
+                <textarea className="rsvp-select-form-field" disabled={areExtraFieldsDisabled(this.state, member.id)} name="restrictions" placeholder="Any dietary restrictions or allergies?"></textarea>
               </div>
             )
           }
            <div className="submit-btn_container">
             <input className="submit-btn" type="submit" value={this.props.isRSVPSubmitBtnDisabled ? 'submitting...' : 'submit'} disabled={this.props.isRSVPSubmitBtnDisabled || Object.keys(this.state.submissions).length < 1} />
           </div>
-        </form>
+        </form>}
         {errorMessage}
       </div>
     );

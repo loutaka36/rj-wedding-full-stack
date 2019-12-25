@@ -5,7 +5,7 @@ const Accommodations = () => {
   return (
     <div className="accommodations">
       <div className="accommodations-top">
-        <div className="accommodations-top_text">Accommodations</div>
+        <div className="accommodations-top_text">Travel to Chicago Southwest</div>
       </div>
     </div>
   );
