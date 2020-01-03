@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   position: absolute;
-  font-family: brandon-grot-w01-light, sans-serif;
+  /* font-family: brandon-grot-w01-light, sans-serif; */
   font-size: 1.5rem;
 }
 
@@ -25,7 +25,7 @@
 
 .navbar a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 /* hamburger button  */
@@ -41,7 +41,7 @@
 .navbar-hamburger_bar {
   width: 35px;
   height: 3px;
-  background-color: #fff;
+  background-color: #000;
   border-radius: 10px;
   margin: 6px 0;
 }
