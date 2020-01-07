@@ -4,6 +4,8 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  background: #f5e4e5;
 }
 
 .rsvp-find form {

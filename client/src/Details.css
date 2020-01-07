@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 .details {
   display: flex;
   flex-direction: column;
@@ -48,6 +50,16 @@
   height: 80%;
   font-size: 6rem;
   margin-bottom: 20px;
+  text-align: center;
+}
+
+.details-ceremony_title__text {
+  margin-bottom: 20px;
+}
+
+.details-ceremony_title__time {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
 }
 
 .details-ceremony_text {
@@ -68,7 +80,13 @@
 }
 
 .details-ceremony_text__item {
-  font-family: freight-sans-pro;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+}
+
+.details-ceremony_text__link {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
 }
 
 /* details divider styling */
@@ -115,6 +133,19 @@
   width: 30%;
   height: 80%;
   font-size: 6rem;
+  text-align: center;
+}
+
+.details-reception_title__text {
+  margin-bottom: 20px;
+}
+
+.details-reception_title__time {
+  font-size: 2rem;
+}
+
+.details-reception_title__time span {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .details-reception_text {
@@ -131,6 +162,11 @@
 
 .details-reception_text__title {
   font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.details-reception_text__item {
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
 }
 

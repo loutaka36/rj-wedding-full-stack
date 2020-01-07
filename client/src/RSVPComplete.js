@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import './RSVPComplete.css';
+
 const RSVPComplete = (props) => {
   let accepted = props.rsvpSubmission.submission.accepted.map(submission => (
     <div className="rsvp-complete-accepted">

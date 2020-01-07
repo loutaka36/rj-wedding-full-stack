@@ -1,0 +1,17 @@
+.rsvp-complete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f5e4e5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.rsvp-complete-accepted, .rsvp-complete-declined {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  width: 300px;
+  text-align: center;
+}
