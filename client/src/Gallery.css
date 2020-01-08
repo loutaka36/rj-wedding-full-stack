@@ -25,6 +25,24 @@
   font-size: 50px;
 }
 
+.gallery-photos {
+  width: 100%;
+  background: #f5e4e5;
+}
+
+.gallery-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0px 20px 0px;
+}
+
+.gallery-photo img {
+  width: 80%;
+  height: auto;
+}
+
 @media screen and (min-width: 878px) {
   .gallery-top {
     height: 560px;

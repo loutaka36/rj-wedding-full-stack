@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 300px;
+  height: 560px;
   background:
     url('./engagement-pics/corner-flowers.png');
   background-size: cover;
@@ -24,7 +24,7 @@
   position: relative;
   top: 50%;
   color: #000;
-  font-size: 50px;
+  font-size: 100px;
 }
 
 /* details ceremony styling */
@@ -84,11 +84,6 @@
   margin-bottom: 20px;
 }
 
-.details-ceremony_text__link {
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 20px;
-}
-
 /* details divider styling */
 .details-divider {
   position: absolute;
@@ -142,9 +137,6 @@
 
 .details-reception_title__time {
   font-size: 2rem;
-}
-
-.details-reception_title__time span {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -170,12 +162,32 @@
   margin-bottom: 20px;
 }
 
-@media screen and (min-width: 878px) {
+@media screen and (max-width: 878px) {
   .details-top {
-    height: 560px;
+    height: 300px;
   }
 
   .details-top_text {
-    font-size: 100px;
+    font-size: 50px;
+  }
+
+  .details-divider {
+    top: 710px;
+  }
+
+  .details-divider_image {
+    background-size: 450px 150px;
+  }
+
+  .details-ceremony_title__text, .details-reception_title__text {
+    font-size: 4rem;
+  }
+
+  .details-ceremony_text__title, .details-reception_text__title {
+    font-size: 2rem;
+  }
+
+  .details-ceremony_text__item, .details-ceremony_title__time, .details-reception_text__item, .details-reception_title__time {
+    font-size: 1rem;
   }
 }

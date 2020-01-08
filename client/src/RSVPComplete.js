@@ -8,16 +8,16 @@ const RSVPComplete = (props) => {
   let accepted = props.rsvpSubmission.submission.accepted.map(submission => (
     <div className="rsvp-complete-accepted">
       <p>{submission.firstName} {submission.lastName}</p>
-      <p>Attendence: {submission.attendence}</p>
-      <p>Entree: {submission.entree}</p>
-      <p>Dietary Restrictions: {submission.restrictions}</p>
+      <p>Attendence: {submission.attendence[0].toUpperCase() + submission.attendence.slice(1)}</p>
+      <p>Entree: {submission.entree[0].toUpperCase() + submission.entree.slice(1)}</p>
+      <p>Dietary Restrictions: {submission.restrictions || "None"}</p>
     </div>
   ));
 
   let declined = props.rsvpSubmission.submission.declined.map(submission => (
     <div className="rsvp-complete-declined">
       <p>{submission.firstName} {submission.lastName}</p>
-      <p>Attendence: {submission.attendence}</p>
+      <p>Attendence: {submission.attendence[0].toUpperCase() + submission.attendence.slice(1)}</p>
     </div>
   ));
 

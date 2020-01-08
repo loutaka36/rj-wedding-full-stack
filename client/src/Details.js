@@ -15,7 +15,7 @@ const Details = () => {
         <div className="details-ceremony_text">
           <div className="details-ceremony_text__title">Trinity Chapel</div>
           <div className="details-ceremony_text__item">130 N West Street<br/>Wheaton, Illinois 60187</div>
-          <div className="details-ceremony_text__link">
+          <div className="details-ceremony_text__item">
             <a href="https://www.google.com/maps/place/Trinity+Episcopal+Church/@41.8657196,-88.1141642,17z/data=!3m1!4b1!4m5!3m4!1s0x880e54f50aba627d:0x2ef9e72acd27ba18!8m2!3d41.8657156!4d-88.1119755" target="_blank">Directions</a>
           </div>
         </div>
@@ -27,10 +27,10 @@ const Details = () => {
         <div className="details-reception_title">
           <div className="details-reception_title__text">Reception</div>
           <div className="details-reception_title__time">
-            5 pm <span>cocktail hour</span>
+            5 pm cocktail hour
           </div>
           <div className="details-reception_title__time">
-            6 pm <span>dinner</span>
+            6 pm dinner
           </div>
         </div>
         <div className="details-reception_text">

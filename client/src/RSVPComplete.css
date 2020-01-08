@@ -5,6 +5,11 @@
   align-items: center;
   background: #f5e4e5;
   font-family: 'Montserrat', sans-serif;
+  min-height: 450px;
+}
+
+.rsvp-complete-link {
+  margin-top: 10px;
 }
 
 .rsvp-complete-accepted, .rsvp-complete-declined {
