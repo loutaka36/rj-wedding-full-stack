@@ -32,7 +32,7 @@ class RSVPFind extends React.Component {
   render() {
     let errorMessage;
     if (this.props.guest.error) {
-      errorMessage = <div>{this.props.guest.error}</div>
+      errorMessage = <div className="rsvp-find-error">{this.props.guest.error}</div>
     }
 
     return (

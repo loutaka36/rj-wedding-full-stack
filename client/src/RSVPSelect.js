@@ -103,7 +103,9 @@ class RSVPSelect extends React.Component {
             )
           }
            <div className="submit-btn_container">
-            <input className="submit-btn" type="submit" value={this.props.isRSVPSubmitBtnDisabled ? 'submitting...' : 'submit'} disabled={this.props.isRSVPSubmitBtnDisabled || Object.keys(this.state.submissions).length < 1} />
+            <button className="submit-btn" type="submit" disabled={this.props.isRSVPSubmitBtnDisabled || Object.keys(this.state.submissions).length < 1}>
+              {this.props.isRSVPSubmitBtnDisabled ? 'submitting...' : 'submit'}
+            </button>
           </div>
         </form>}
         {errorMessage}
