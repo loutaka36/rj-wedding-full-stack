@@ -9,6 +9,7 @@ import groupReducer from './group';
 import singleGuestSubmitBtnReducer from './singleGuestSubmitBtn';
 import rsvpSubmissionReducer from './rsvpSubmission';
 import rsvpSubmitBtnReducer from './rsvpSubmitBtn';
+import singlePhotoReducer from './singlePhoto';
 
 const rootReducer = combineReducers({
   access: accessReducer,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   group: groupReducer,
   isSingleGuestSubmitDisabled: singleGuestSubmitBtnReducer,
   rsvpSubmission: rsvpSubmissionReducer,
-  isRSVPSubmitBtnDisabled: rsvpSubmitBtnReducer
+  isRSVPSubmitBtnDisabled: rsvpSubmitBtnReducer,
+  singlePhoto: singlePhotoReducer
 })
 
 const middleware = composeWithDevTools(

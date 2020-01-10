@@ -39,7 +39,7 @@ class RSVPFind extends React.Component {
       <div className="rsvp-find">
         <form onSubmit={this.handleSubmit}>
           <div className="rsvp-list_item">
-            <div className="title">Please Enter Your Name:</div>
+            <div className="title">Please let us know whether you are able to join us!</div>
             <div className="name-fields">
               <div className="name-field">
                 <input
@@ -62,7 +62,9 @@ class RSVPFind extends React.Component {
             </div>
           </div>
           <div className="submit-btn_container">
-            <input className="submit-btn" type="submit" value={this.props.isSingleGuestSubmitDisabled ? "Finding..." : "Find me!"} disabled={this.props.isSingleGuestSubmitDisabled}/>
+            <button className="rsvp-find-submit-btn" type="submit" disabled={this.props.isSingleGuestSubmitDisabled}>
+              {this.props.isSingleGuestSubmitDisabled ? "Finding..." : "Find me!"}
+            </button>
           </div>
         </form>
         {errorMessage}

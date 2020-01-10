@@ -4,13 +4,48 @@
   width: 100%;
 }
 
+/* single photo view styling  */
+
+.gallery-single-photo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  top: 0px;
+  left: -100%;
+  z-index: 98;
+}
+
+.gallery-single-photo img {
+  max-width: 70%;
+  max-height: 90%;
+}
+
+.gallery-single-photo_open {
+  top: 0px;
+  left: 0px;
+}
+
+.chevron {
+  font-size: 3rem;
+  color: #fff;
+  margin: 30px;
+}
+
+.chevron:hover {
+  cursor: pointer;
+}
+
 /* gallery top styling */
 .gallery-top {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 300px;
+  height: 560px;
   background:
     url('./engagement-pics/corner-flowers.png');
   background-size: cover;
@@ -22,7 +57,7 @@
   position: relative;
   top: 50%;
   color: #000;
-  font-size: 50px;
+  font-size: 100px;
 }
 
 .gallery-photos {
@@ -30,25 +65,56 @@
   background: #f5e4e5;
 }
 
-.gallery-photo {
+.gallery-photo-hstack {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  width: 100%;
-  padding: 20px 0px 20px 0px;
 }
 
-.gallery-photo img {
-  width: 80%;
+.gallery-photo-vstack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.gallery-photos img {
+  width: 500px;
   height: auto;
+  margin: 10px;
 }
 
-@media screen and (min-width: 878px) {
+.gallery-photos .v_img {
+  width: auto;
+  height: 686.66px;
+}
+
+@media screen and (max-width: 1050px) {
+  .gallery-photos img {
+    width: 350px;
+    height: auto;
+  }
+
+  .gallery-photos .v_img {
+    width: auto;
+    height: 486.66px;
+  }
+}
+
+@media screen and (max-width: 878px) {
   .gallery-top {
-    height: 560px;
+    height: 300px;
   }
 
   .gallery-top_text {
-    font-size: 100px;
+    font-size: 50px;
+  }
+
+  .gallery-photo-hstack {
+    flex-direction: column;
+  }
+
+  .gallery-single-photo {
+    display: none;
   }
 }
