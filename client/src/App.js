@@ -15,9 +15,6 @@ import MobileMenu from './MobileMenu';
 import Footer from './Footer';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     if (this.props.access.allow) {

@@ -10,6 +10,7 @@ import singleGuestSubmitBtnReducer from './singleGuestSubmitBtn';
 import rsvpSubmissionReducer from './rsvpSubmission';
 import rsvpSubmitBtnReducer from './rsvpSubmitBtn';
 import singlePhotoReducer from './singlePhoto';
+import scrollReducer from './scroll';
 
 const rootReducer = combineReducers({
   access: accessReducer,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   isSingleGuestSubmitDisabled: singleGuestSubmitBtnReducer,
   rsvpSubmission: rsvpSubmissionReducer,
   isRSVPSubmitBtnDisabled: rsvpSubmitBtnReducer,
-  singlePhoto: singlePhotoReducer
+  singlePhoto: singlePhotoReducer,
+  isScrolling: scrollReducer
 })
 
 const middleware = composeWithDevTools(

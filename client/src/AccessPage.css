@@ -18,15 +18,12 @@
 
 .access-page_item {
   margin: 20px;
+  -webkit-appearance: none;
 }
 
 /* invite code input */
 .access-page_invite-code::placeholder {
   text-align: center;
-}
-
-.access-page_invite-code {
-
 }
 
 /* access error message */
