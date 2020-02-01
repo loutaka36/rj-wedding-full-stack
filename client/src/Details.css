@@ -59,7 +59,7 @@
 
 .details-ceremony_title__time {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .details-ceremony_text {
@@ -136,7 +136,7 @@
 }
 
 .details-reception_title__time {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -160,6 +160,24 @@
 .details-reception_text__item {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
+}
+
+/* details note styling */
+
+.details-note {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background: #f5e4e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-note p {
+  width: 80%;
+  margin: 0px;
+  font-size: 1.5rem
 }
 
 @media screen and (max-width: 878px) {
@@ -187,7 +205,7 @@
     font-size: 2rem;
   }
 
-  .details-ceremony_text__item, .details-ceremony_title__time, .details-reception_text__item, .details-reception_title__time {
+  .details-ceremony_text__item, .details-ceremony_title__time, .details-reception_text__item, .details-reception_title__time .details-note p {
     font-size: 1rem;
   }
 }

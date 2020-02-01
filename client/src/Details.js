@@ -41,6 +41,11 @@ const Details = () => {
           </div>
         </div>
       </div>
+      <div className="details-note">
+        <p>
+          For guests who will not have access to cars, there will be two small shuttles available after the ceremony that can take guests from Trinity Episcopal Church to cocktail hour at Hyatt Regency Lisle.
+        </p>
+      </div>
     </div>
   );
 }
