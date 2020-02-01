@@ -35,7 +35,10 @@ router.get('/group/:groupId', async (req, res, next) => {
     const group = await Guest.findAll({
       where: {
         groupId: req.params.groupId
-      }
+      },
+      order: [
+        ['id', 'ASC']
+      ]
     });
     res.json(group);
   } catch (err) {

@@ -47,7 +47,7 @@ class AccessPage extends React.Component {
             value={this.state.inviteCode}
             onChange={(event) => this.handleInputChange(event)}
           />
-          <input className="access-page_item" type="submit" value={ this.props.isAccessSubmitDisabled ? "Loading..." : "See Website!"} disabled={this.props.isAccessSubmitDisabled}/>
+          <input className="access-page_item" type="submit" value={ this.props.isAccessSubmitDisabled ? "Wait..." : "See Website!"} disabled={this.props.isAccessSubmitDisabled}/>
         </form>
         {errorMessage}
       </div>

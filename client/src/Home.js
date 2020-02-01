@@ -11,7 +11,15 @@ const Home = () => {
       <div className="home-photo">
         <div className="home-photo_pic"/>
       </div>
-
+      <div className="home-story">
+        <p>
+          loremipus fasdfsdfsad
+          fdsfdsf
+          dsfsdafsda<br/>
+          fasdfsdfsadf
+          dsaf
+        </p>
+      </div>
     </div>
   );
 }

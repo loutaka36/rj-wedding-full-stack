@@ -7,6 +7,12 @@ const Accommodations = () => {
       <div className="accommodations-top">
         <div className="accommodations-top_text">Accomodations</div>
       </div>
+      <div className="accommodations-hotel">
+        h
+      </div>
+      <div className="accommodations-shuttle">
+        s
+      </div>
     </div>
   );
 }
