@@ -10,13 +10,15 @@ const createAuthError = () => {
   return err;
 }
 
-//for expression session. Need to implement session store first. todo
-// router.get('/access', (req, res, next) => {
-
-// });
+router.get('/me', (req, res) => {
+  res.json(req.session.time)
+})
 
 router.put('/access', (req, res, next) => {
   if (encode(req.body.inviteCode) === process.env.INVITE_CODE) {
+    const now = new Date()
+    req.session.time = now.getTime()
+    console.log(req.session)
     res.sendStatus(200);
   } else {
     next(createAuthError());

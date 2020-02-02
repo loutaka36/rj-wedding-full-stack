@@ -13,6 +13,23 @@ const denyAccess = (error) => ({
   error
 })
 
+export const getMe = () => {
+  return async (dispatch) => {
+    try {
+      console.log('yay')
+      const res = await axios.get('/auth/me');
+      console.log(res.data)
+      if (res.data) {
+        dispatch(grantAccess())
+      } else {
+        dispatch(denyAccess())
+      }
+    } catch (err) {
+      dispatch(denyAccess('Please enter access code'))
+    }
+  }
+}
+
 export const attemptLogin = (inviteCode) => {
   return async (dispatch) => {
     try {

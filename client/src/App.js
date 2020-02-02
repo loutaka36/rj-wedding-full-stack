@@ -4,6 +4,7 @@ import './App.css';
 
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import {getMe} from './store/access';
 import AccessPage from './AccessPage';
 import Navbar from './Navbar';
 import Home from './Home';
@@ -15,6 +16,9 @@ import MobileMenu from './MobileMenu';
 import Footer from './Footer';
 
 class App extends React.Component {
+  async componentWillMount() {
+    await this.props.getMe()
+  }
 
   render() {
     if (this.props.access.allow) {
@@ -47,14 +51,7 @@ class App extends React.Component {
       );
     } else {
       return (
-        <Switch>
-          <Route exact path="/">
-            <AccessPage />
-          </Route>
-          <Route path="*">
-            <Redirect to="/" />
-          </Route>
-        </Switch>
+        <AccessPage />
       );
     }
   }
@@ -64,4 +61,8 @@ const mapStateToProps = (state) => ({
   access: state.access
 });
 
-export default withRouter(connect(mapStateToProps)(App));
+const mapDispatchToProps = (dispatch) => ({
+  getMe: () => dispatch(getMe())
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

@@ -5,13 +5,21 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 //routes for /api/guest
 
+const isAuthenticated = (req, res, next) => {
+  if (req.session.time) {
+    next()
+  } else {
+    res.status(401).send('forbidden')
+  }
+}
+
 const createFetchError = (message) => {
   const err = new Error(message);
   err.status = 404;
   return err;
 }
 
-router.get('/name/:name', async (req, res, next) => {
+router.get('/name/:name', isAuthenticated, async (req, res, next) => {
   const name = req.params.name.split('_');
   try {
     const guest = await Guest.findOne({
@@ -30,7 +38,7 @@ router.get('/name/:name', async (req, res, next) => {
   }
 });
 
-router.get('/group/:groupId', async (req, res, next) => {
+router.get('/group/:groupId', isAuthenticated, async (req, res, next) => {
   try {
     const group = await Guest.findAll({
       where: {
