@@ -7,9 +7,9 @@ const Op = Sequelize.Op;
 
 const isAuthenticated = (req, res, next) => {
   if (req.session.time) {
-    next()
+    next();
   } else {
-    res.status(401).send('forbidden')
+    res.status(401).send('forbidden');
   }
 }
 
@@ -92,6 +92,8 @@ router.put('/rsvp', async (req, res, next) => {
     for (let guest of decline) {
       const resArr = await Guest.update({
         attendence: 'decline',
+        entree: null,
+        restrictions: null
       },
       {
         where: {
