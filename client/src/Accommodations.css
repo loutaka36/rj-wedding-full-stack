@@ -39,6 +39,15 @@
 
 .accommodations-hotel p {
   width: 50%;
+  font-size: 1.5rem
+}
+
+.accommodations-flower {
+  width: 40%;
+}
+
+.accommodations-hotel-image {
+  width: 80%;
 }
 
 /* accommodations-shuttle styling */
@@ -54,5 +63,6 @@
 
   .accommodations-hotel p {
     width: 80%;
+    font-size: 1rem;
   }
 }
