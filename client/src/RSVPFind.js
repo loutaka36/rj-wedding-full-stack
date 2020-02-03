@@ -63,7 +63,7 @@ class RSVPFind extends React.Component {
           </div>
           <div className="submit-btn_container">
             <button className="rsvp-find-submit-btn" type="submit" disabled={this.props.isSingleGuestSubmitDisabled}>
-              {this.props.isSingleGuestSubmitDisabled ? "Finding..." : "Find me!"}
+              {this.props.isSingleGuestSubmitDisabled ? "Wait..." : "Submit"}
             </button>
           </div>
         </form>

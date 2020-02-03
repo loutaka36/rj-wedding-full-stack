@@ -21,7 +21,7 @@ const Accommodations = () => {
 
           Please reach out to us if you have any questions!
         </p>
-        <img className="accommodations-hotel-image" src={require('./engagement-pics/hyatt.webp')} />
+        <img className="accommodations-hotel-image" src={require('./engagement-pics/hyattlisle.jpg')} />
       </div>
     </div>
   );

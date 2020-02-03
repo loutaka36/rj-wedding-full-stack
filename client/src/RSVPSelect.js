@@ -89,14 +89,14 @@ class RSVPSelect extends React.Component {
                 <label className="rsvp-select-form-field" for="attendence">{`${member.firstName} ${member.lastName}`}</label>
                 <select className="rsvp-select-form-field" name="attendence">
                   <option value="pending">--Will this individual be attending?--</option>
-                  <option value="accept">Accept</option>
-                  <option value="decline">Decline</option>
+                  <option value="accept">Yes</option>
+                  <option value="decline">No</option>
                 </select>
                 <select className="rsvp-select-form-field" disabled={areExtraFieldsDisabled(this.state, member.id)} name="entree">
                   <option value="">--Choose your entree--</option>
-                  <option value="steak">Manhattan strip steak with garlic jus, asparagus, roasted garlic mash</option>
-                  <option value="salmon">Atlantic salmon, whipped potato, spinach, lemon dill</option>
-                  <option value="vegetarian">Grilled eggplant cannelloni, preserved tomato, wilted spinach</option>
+                  <option value="steak">Manhattan strip steak</option>
+                  <option value="salmon">Atlantic salmon with lemon dill</option>
+                  <option value="vegetarian">Grilled eggplant cannelloni</option>
                 </select>
                 <textarea className="rsvp-select-form-field" disabled={areExtraFieldsDisabled(this.state, member.id)} name="restrictions" placeholder="Any dietary restrictions or allergies?"></textarea>
               </div>
@@ -104,7 +104,7 @@ class RSVPSelect extends React.Component {
           }
            <div className="submit-btn_container">
             <button className="submit-btn" type="submit" disabled={this.props.isRSVPSubmitBtnDisabled || Object.keys(this.state.submissions).length < 1}>
-              {this.props.isRSVPSubmitBtnDisabled ? 'submitting...' : 'submit'}
+              {this.props.isRSVPSubmitBtnDisabled ? 'wait...' : 'submit'}
             </button>
           </div>
         </form>}
