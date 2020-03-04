@@ -82,7 +82,7 @@ class RSVPSelect extends React.Component {
     return (
       <div className="rsvp-select">
         {this.props.group.groupMembers.length === 0 ?
-            <div className="loader"></div> :
+            <div className="loader-text">Loading...</div> :
             <form onSubmit={this.handleSubmit}>
             {this.props.group.groupMembers.map(member =>
               <div onChange={this.handleChange} key={member.id} guestId={member.id} className="group-member">
