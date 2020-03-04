@@ -41,6 +41,7 @@
   border: 1px solid black;
   border-radius: 5px;
   width: 400px;
+  background: #f5e4e5;
 }
 
 .group-member textarea {
