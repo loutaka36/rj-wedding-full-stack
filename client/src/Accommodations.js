@@ -13,7 +13,7 @@ const Accommodations = () => {
 
           Single and double rooms are $110. Triple rooms are $120. Breakfast is included.<br/><br/>
 
-          Please book your rooms <a href="#" target="_blank" rel="noopener noreferrer">here</a>.
+          Please book your rooms <a href="https://www.hyatt.com/en-US/group-booking/LISLE/G-CHTB" target="_blank" rel="noopener noreferrer">here</a>.
         </p>
         <img className="accommodations-flower "src={require('./engagement-pics/carnations.png')} />
         <p>

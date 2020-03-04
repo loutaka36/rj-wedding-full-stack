@@ -37,10 +37,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
   border: 1px solid black;
   border-radius: 5px;
-  width: 85%;
+  width: 436px;
 }
 
 .group-member textarea {
@@ -78,3 +78,4 @@
   width: 80%;
   text-align: center;
 }
+
