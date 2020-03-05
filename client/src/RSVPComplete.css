@@ -20,3 +20,8 @@
   width: 300px;
   text-align: center;
 }
+@media screen and (max-width: 500px) {
+  .rsvp-complete-accepted, .rsvp-complete-declined {
+    width: 85%;
+  }
+}

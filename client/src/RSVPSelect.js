@@ -85,7 +85,6 @@ class RSVPSelect extends React.Component {
         {this.props.group.groupMembers.length === 0 ?
             <div className="loader">Loading...</div> :
             <form onSubmit={this.handleSubmit}>
-              <div className="filler"></div>
             {this.props.group.groupMembers.map(member =>
               <div onChange={this.handleChange} key={member.id} guestId={member.id} className="group-member">
                 <label className="rsvp-select-form-field" for="attendence">{`${member.firstName} ${member.lastName}`}</label>

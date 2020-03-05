@@ -17,11 +17,6 @@
   margin-top: 20px;
 }
 
-.filler {
-  height: 200px;
-  width: 100%;
-}
-
 .rsvp-select {
   display: flex;
   flex-direction: column;
@@ -46,7 +41,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
   border: 1px solid black;
   border-radius: 5px;
   width: 400px;
