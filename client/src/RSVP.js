@@ -20,6 +20,7 @@ class RSVP extends React.Component {
     if (this.props.guest.guestData.groupId && (this.props.rsvpSubmission.submission.accepted|| this.props.rsvpSubmission.submission.declined)) {
       return (
         <div className="rsvp">
+          <div className="nav-filler"></div>
           <div className="filler"></div>
           <RSVPComplete />
         </div>
@@ -27,6 +28,7 @@ class RSVP extends React.Component {
     } else if (this.props.guest.guestData.groupId) {
       return (
         <div className="rsvp">
+          <div className="nav-filler"></div>
           <div className="filler"></div>
           <RSVPSelect />
         </div>
