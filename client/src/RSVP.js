@@ -32,9 +32,7 @@ class RSVP extends React.Component {
         <div className="rsvp">
           <div className="rsvp-top">
             <div className="rsvp-top_title">RSVP</div>
-            <div className="rsvp-top_text">{`Hi, ${this.props.guest.guestData.firstName}! Who will be attending?`}</div>
           </div>
-          <div></div>
           <RSVPSelect />
         </div>
       );
