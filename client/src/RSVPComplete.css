@@ -5,7 +5,12 @@
   align-items: center;
   background: #f5e4e5;
   font-family: 'Montserrat', sans-serif;
-  min-height: 450px;
+  min-height: 800px;
+}
+
+.rsvp-complete-message {
+  margin: 20px;
+  text-align: center;
 }
 
 .rsvp-complete-link {

@@ -23,6 +23,7 @@ const RSVPComplete = (props) => {
 
   return (
     <div className="rsvp-complete">
+      <div className="rsvp-complete-message">Thanks for submitting! Here is a confirmation of your submission: </div>
       {accepted}
       {declined}
       <div className="rsvp-complete-link">
