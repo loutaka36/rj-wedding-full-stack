@@ -25,7 +25,7 @@ class RSVPFind extends React.Component {
 
   async handleSubmit(event)  {
     event.preventDefault();
-    this.props.toggleSingleGuestSubmitBtn()
+    this.props.toggleSingleGuestSubmitBtn();
     await this.props.fetchSingleGuest(this.state.firstName.trim(), this.state.lastName.trim());
   }
 
