@@ -1,6 +1,10 @@
 ## RJ Wedding Website
 
+<<<<<<< HEAD
 A full stack wedding website with both a frontend UI and backend with a database.
+=======
+A full stack wedding webite with both a frontend UI and backend with a database.
+>>>>>>> 26467b6c99924583c71bb00a721a43ee5792deea
 
 ## Features
 
