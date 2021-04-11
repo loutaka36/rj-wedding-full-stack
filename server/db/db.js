@@ -4,10 +4,9 @@ const db = new Sequelize(
   'postgres://localhost:5432/wedding', {
     logging: false,
     "dialect": "postgres",
+    "ssl": true,
     "dialectOptions": {
-      "ssl": {
-          rejectUnauthorized: false
-      }
+      "ssl": true
     }
   }
 );
