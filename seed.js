@@ -3,7 +3,6 @@ const guestList = require('./guestList');
 
 const seed = async () => {
   try {
-    await db.sync()
     await Guest.bulkCreate(guestList);
     console.log('success!')
   } catch (err) {
