@@ -49,7 +49,7 @@ const Gallery = (props) => {
 
   return (
     <div className="gallery">
-      {/* <div className={singlePhotoClass} onClick={(event) => exitSinglePhoto(event)}>
+      <div className={singlePhotoClass} onClick={(event) => exitSinglePhoto(event)}>
         <div className="chevron" onClick={() => toNextPhoto('decrement')}>{'<'}</div>
         <img src={props.singlePhoto ? require(`./engagement-pics/${photoUrls[parseInt(props.singlePhoto, 10)]}`) : ''}/>
         <div className="chevron" onClick={() => toNextPhoto('increment')}>{'>'}</div>
@@ -83,7 +83,7 @@ const Gallery = (props) => {
           <img index="9" src={require('./engagement-pics/JR_0023.jpg')}/>
           <img index="10" src={require('./engagement-pics/JR_0034.jpg')}/>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
